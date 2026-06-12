@@ -14,9 +14,7 @@ body, html {
 
 .bg {
     background-image: url("../pics/nicola-pavan-ySIhrENsguE-unsplash.jpg");
-
     height: 100%;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,16 +26,26 @@ body, html {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgb(193 179 179 / 0.4);
-    border-radius: 0 0 12px 12px;
+    border-radius: 16px;
     padding: 15px 40px;
+    width: fit-content;
 }
+
+.header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 15%;
+}
+
 
 .header{
     display: flex;
-    flex-shrink: 2;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    width: auto;
+    gap: 3.5rem;
 }
 
 .header-a{
@@ -47,22 +55,9 @@ body, html {
     color: #001f3f;
 }
 
-.linus-header{
-    position: relative;
-    left: 5vw;
-}
-
 .header-a:hover{
     text-decoration: none;
     color: #6f42c1;
-}
-
-
-.nav-links{
-    display: flex;
-    position: relative;
-    right: 5vw;
-    gap: 5vw;
 }
 
 
@@ -87,6 +82,10 @@ body, html {
     fill: #00172e;
 }
 
+.socials-container{
+    margin: 10px 7em;
+}
+
 .socials-heading{
     margin-top: 15vh;
     display: flex;
@@ -108,12 +107,13 @@ body, html {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: fit-content;
+    max-width: 1200px;
 }
 
 .card-social{
     background-color: #0d1e36;
     color: #9eeaf9;
-    border: 1px solid #1a3154;
+    border: 1px solid #011e3e;
     border-radius: 20px;
     height: 70px;
     width: 100%;
@@ -123,12 +123,13 @@ body, html {
     justify-self: center;
     justify-content: flex-start;
     padding: 1rem;
-    box-shadow: 0 6px 0 #093a6c;
+    box-shadow: 0 6px 0 #02274e;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .card-social:hover{
-    background-color: #052e59;
+    background-color: #02274e;
+    box-shadow: 0 6px 0 #032b57;
 }
 
 .card-social:active{
@@ -222,4 +223,10 @@ body, html {
 .bento-icon {
     font-size: 2rem;
     margin-bottom: 5px;
+}
+
+
+.spacer{
+    height: 7vh;
+    width: 100%;
 }

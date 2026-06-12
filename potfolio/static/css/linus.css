@@ -87,30 +87,75 @@ body, html {
 }
 
 .socials{
+    margin: 15vh 20px;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    height: 60px;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: fit-content;
 }
 
-
-.github{
-    grid-column: 2/4;
-    background-color: black;
-    height: 60px;
+.card{
+    background-color: #001f3f;
+    color: #9eeaf9;
+    border-radius: 6px;
+    height: 70px;
+    width: 100%;
     display: flex;
-
-}
-
-.github a{
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
     display: flex;
     align-items: center;
-    height: 100%;
-    position: relative;
-    left: 10%;
+    justify-content: flex-start;
+    padding: 1rem;
+    box-shadow: 10px 5px 5px #677464;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.github-logo{
-    font-size: 3rem;
-    color: white;
-    display: inline-block;
+.card:hover{
+    background-color: #052e59;
+}
+
+.card:active{
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.github {
+    grid-column: 1;
+}
+
+.reddit{
+    grid-column: 2;
+}
+
+.resume{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.spotify{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+
+.social {
+    margin-left: 20%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.user {
+    margin-left: 20%;
+    font-size: 0.75rem;
+    opacity: 0.5;
 }

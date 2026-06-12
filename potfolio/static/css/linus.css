@@ -1,0 +1,116 @@
+@font-face {
+    font-family: Baloo;
+    src: url(../fonts/Baloo_Bhaijaan_2/BalooBhaijaan2-VariableFont_wght.ttf);
+}
+
+
+body, html {
+    height: 100%;
+    font-family: Baloo;
+    font-size: 100%;
+    color: #001f3f;
+}
+
+.bg {
+    background-image: url("../pics/nicola-pavan-ySIhrENsguE-unsplash.jpg");
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.glass-box {
+    background: rgb(232 223 223 / 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgb(193 179 179 / 0.4);
+    border-radius: 0 0 12px 12px;
+    padding: 15px 40px;
+}
+
+.header{
+    display: flex;
+    flex-shrink: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-a{
+    text-decoration: none;
+    font-family: Baloo;
+    font-size: 1.5rem;
+    color: #001f3f;
+}
+
+.linus-header{
+    position: relative;
+    left: 5vw;
+}
+
+.header-a:hover{
+    text-decoration: none;
+    color: #6f42c1;
+}
+
+
+.nav-links{
+    display: flex;
+    position: relative;
+    right: 5vw;
+    gap: 5vw;
+}
+
+
+.custom-shape-divider-bottom-1781181773 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1781181773 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 55px;
+}
+
+.custom-shape-divider-bottom-1781181773 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.socials{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    height: 60px;
+}
+
+
+.github{
+    grid-column: 2/4;
+    background-color: black;
+    height: 60px;
+    display: flex;
+
+}
+
+.github a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    left: 10%;
+}
+
+.github-logo{
+    font-size: 3rem;
+    color: white;
+    display: inline-block;
+}

@@ -1,0 +1,103 @@
+html{
+    font-size: 100%;
+}
+
+body{
+    background-color: #F1F3E0;
+    color: #677464;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Baloo;
+    src: url(../fonts/Baloo_Bhaijaan_2/BalooBhaijaan2-VariableFont_wght.ttf);
+}
+
+.baloo-font{
+    font-family: Baloo;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    justify-content: center;
+    height: 100vh;
+}
+
+.heading-container{
+    font-family: Baloo;
+    grid-row: 1;
+    align-self: end;
+}
+
+h1{
+    font-size: 3.5rem;
+}
+
+h1 > a{
+    color: #D97706;
+    text-decoration: none;
+}
+
+
+.input-container{
+    justify-self: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.input-container form {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #fff;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+
+.mail-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.2em;
+    height: 1.2em;
+    pointer-events: none;
+}
+
+
+.email-input {
+    width: 100%;
+    padding: 12px 10px 12px 45px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+
+.email-submit-button {
+    font-family: inherit;
+    background-color: #677464;
+    color: #F1F3E0;
+    padding: 0 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.email-submit-button:hover {
+    background-color: #A1BC98;
+}

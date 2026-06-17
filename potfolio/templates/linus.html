@@ -211,4 +211,22 @@
         document.body.removeChild(link);
     });
 
+    function showSuccessMessage() {
+        const toast = document.getElementById('success-toast');
+
+        toast.className = "toast-visible";
+        setTimeout(() => {
+            toast.className = "toast-hidden"
+        }, 3000);
+    }
+
+    async function copyText() {
+        const text = document.getElementById("mail").innerText;
+        showSuccessMessage()
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (err) {
+        }
+    }
+
 </script>

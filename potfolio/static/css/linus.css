@@ -13,8 +13,8 @@ body, html {
 
     background-size: 40px 40px;
     background-image:
-            linear-gradient(to right, rgba(255, 102, 0, 0.08) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 102, 0, 0.08) 1px, transparent 1px);
+            linear-gradient(to right, rgba(0, 255, 73, 0.09) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 255, 73, 0.09) 1px, transparent 1px);
 
 }
 
@@ -57,7 +57,7 @@ body, html {
 .header-a{
     text-decoration: none;
     font-family: Baloo;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     color: #001f3f;
 }
 
@@ -89,7 +89,8 @@ body, html {
 }
 
 .socials-container{
-    margin: 10px 7em;
+    display: flex;
+    justify-content: center;
 }
 
 .socials-heading{
@@ -113,7 +114,6 @@ body, html {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: fit-content;
-    max-width: 1200px;
 }
 .svg-icon{
     width: 1.8rem;
@@ -133,15 +133,15 @@ body, html {
     color: #9eeaf9;
     border: 1px solid #011e3e;
     border-radius: 20px;
+    box-shadow: 0 6px 0 #02274e;
     height: 70px;
-    width: 100%;
+    min-width: 200px;
+    width: 20vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-self: center;
     justify-content: flex-start;
     padding: 1rem;
-    box-shadow: 0 6px 0 #02274e;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
@@ -155,26 +155,32 @@ body, html {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-
+.card-social .hover {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
 
 .text {
     display: flex;
+    font-size: 1rem;
     flex-direction: column;
     justify-content: center;
-    white-space: nowrap;
+    align-items: flex-start;
+    margin-left: 14px;
 }
 
-
 .social {
-    margin-left: 20%;
-    font-size: 1rem;
+    font-size: 1em;      /* relativ zu .text font-size */
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .user {
-    margin-left: 20%;
-    font-size: 0.75rem;
+    font-size: 0.7em;    /* relativ zu .text font-size */
     opacity: 0.5;
+    line-height: 1.2;
 }
 
 
@@ -235,7 +241,7 @@ body, html {
 }
 
 .food-card{
- grid-column: span 2;
+    grid-column: span 2;
 }
 
 .bento-icon {
@@ -260,8 +266,13 @@ body, html {
 .header-section p{
     opacity: 65%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 2px;
+}
+
+.header-section h1{
+    font-size: 3rem;
+    justify-self: center;
 }
 
 .carousel {
@@ -270,9 +281,10 @@ body, html {
     max-width: 1200px;
     overflow: hidden;
     display: flex;
-    > * {
-        flex: 0 0 100%;
-    }
+}
+
+.carousel > * {
+    flex: 0 0 100%;
 }
 
 .card {
@@ -285,27 +297,25 @@ body, html {
     justify-content: center;
     align-items: center;
     min-height: 200px;
-
-    &:nth-child(1) {
-        background: #7958ff;
-    }
-
-    &:nth-child(2) {
-        background: #5d34f2;
-    }
-
-    &:nth-child(3) {
-        background: #4300da;
-    }
 }
 
-/* Group the cards for better structure. */
+.card:nth-child(1) {
+    background: #7958ff;
+}
+
+.card:nth-child(2) {
+    background: #5d34f2;
+}
+
+.card:nth-child(3) {
+    background: #4300da;
+}
+
 .group {
     display: flex;
     gap: 20px;
-    /* Add padding to the right to create a gap between the last and first card. */
     padding-right: 20px;
-    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+    will-change: transform;
 }
 
 @keyframes scrolling {
@@ -388,4 +398,191 @@ body, html {
 .toast-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.header-a        { font-size: clamp(1rem, 1.8vw, 2.5rem); }
+.section-title   { font-size: clamp(1.4rem, 2vw,   3rem); }
+.socials-heading h1 { font-size: clamp(1.4rem, 2vw, 2.5rem); }
+.header-section p   { font-size: clamp(0.85rem, 1vw, 1.4rem); }
+.bento-icon      { font-size: clamp(1.8rem, 2.5vw, 3.5rem); }
+.project-name    { font-size: clamp(1.6rem, 2.5vw, 4rem); }
+
+
+/* ── Large Desktop (≥ 1440px) ───────────────────────── */
+@media (min-width: 1440px) {
+
+    .bento-container,
+    .carousel {
+        max-width: 1380px;
+    }
+
+    .card-social {
+        max-width: 340px;
+    }
+}
+
+
+/* ── 2K / Ultra-Wide (≥ 1920px) ─────────────────────── */
+@media (min-width: 1920px) {
+
+    html {
+        font-size: 118%;
+    }
+
+    .bento-container,
+    .carousel {
+        max-width: 1760px;
+    }
+
+    .card-social {
+        height: 85px;
+        max-width: 420px;
+    }
+
+    .svg-icon {
+        width: 2.2rem;
+    }
+
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .bento-container {
+        grid-auto-rows: minmax(200px, auto);
+        gap: 28px;
+    }
+
+    .header {
+        gap: 5rem;
+    }
+
+    .custom-shape-divider-bottom-1781181773 svg {
+        height: 75px;
+    }
+}
+
+
+/* ── 4K / Super Ultra-Wide (≥ 2560px) ───────────────── */
+@media (min-width: 2560px) {
+
+    html {
+        font-size: 150%;
+    }
+
+    .bento-container,
+    .carousel {
+        max-width: 2300px;
+    }
+
+    .card-social {
+        height: 100px;
+        max-width: 520px;
+    }
+
+    .svg-icon {
+        width: 2.8rem;
+    }
+
+    .text {
+        font-size: 1.2rem;
+    }
+
+    .bento-container {
+        grid-auto-rows: minmax(240px, auto);
+        gap: 36px;
+    }
+
+    .header {
+        gap: 7rem;
+    }
+
+    .custom-shape-divider-bottom-1781181773 svg {
+        height: 110px;
+    }
+
+    body, html {
+        background-size: 60px 60px;
+    }
+}
+
+
+/* ── Tablet (≤ 900px) ────────────────────────────────── */
+@media (max-width: 900px) {
+
+    .header {
+        gap: 2rem;
+    }
+
+    .socials {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-social {
+        width: auto;
+        min-width: 160px;
+    }
+
+    .bento-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+    .tech-card    { grid-column: span 2; grid-row: auto; }
+    .car-card     { grid-column: auto;   grid-row: auto; height: auto; }
+    .gym-card     { grid-column: auto;   grid-row: auto; }
+    .camping-card { grid-column: auto; }
+    .food-card    { grid-column: span 2; }
+}
+
+
+/* ── Mobile (≤ 600px) ────────────────────────────────── */
+@media (max-width: 600px) {
+
+    .header {
+        gap: 1rem;
+        padding: 12px 16px;
+    }
+
+    .socials-heading {
+        margin-top: 10vh;
+    }
+
+    .socials {
+        grid-template-columns: 1fr;
+        margin: 10px 16px;
+        gap: 12px;
+    }
+
+    .card-social {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .section-title {
+        margin-top: 10vh;
+    }
+
+    .bento-container {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .tech-card,
+    .car-card,
+    .gym-card,
+    .camping-card,
+    .food-card {
+        grid-column: auto;
+        grid-row: auto;
+        height: auto;
+    }
+
+    .github-link {
+        font-size: 1rem;
+    }
+
+    .carousel {
+        padding: 20px 16px;
+    }
 }

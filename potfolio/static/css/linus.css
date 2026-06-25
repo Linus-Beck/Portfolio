@@ -11,11 +11,11 @@ body, html {
     color: white;
     background-color: #00172e;
 
-    background-size: 40px 40px;
+    background-size: 30px 30px;
+    background-attachment: fixed;
     background-image:
             linear-gradient(to right, rgba(0, 255, 73, 0.09) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(0, 255, 73, 0.09) 1px, transparent 1px);
-
 }
 
 .bg {
@@ -75,6 +75,7 @@ body, html {
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+
 }
 
 .custom-shape-divider-bottom-1781181773 svg {
@@ -82,9 +83,11 @@ body, html {
     display: block;
     width: calc(100% + 1.3px);
     height: 55px;
+
 }
 
 .custom-shape-divider-bottom-1781181773 .shape-fill {
+
     fill: #00172e;
 }
 
@@ -263,88 +266,8 @@ body, html {
 
 }
 
-.header-section p{
-    opacity: 65%;
-    text-align: center;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
 
-.header-section h1{
-    font-size: 3rem;
-    justify-self: center;
-}
-
-.carousel {
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 1200px;
-    overflow: hidden;
-    display: flex;
-}
-
-.carousel > * {
-    flex: 0 0 100%;
-}
-
-.card {
-    width: 100%;
-    color: white;
-    border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
-    padding: 20px;
-    font-size: large;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr fit-content(1px) 1fr;
-}
-
-.card:nth-child(1) {
-    background: #0d1e36;
-}
-
-.card:nth-child(2) {
-    background: #0d1e36;
-}
-
-.card:nth-child(3) {
-    background: #0d1e36;
-}
-
-.group {
-    display: flex;
-    gap: 20px;
-    padding-right: 20px;
-    will-change: transform;
-}
-
-@keyframes scrolling {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-
-.tech-stack{
-    align-self: end;
-    display: flex;
-    gap: 8px;
-}
-
-.example{
-    grid-column: span 2;
-    padding: 7px 0px;
-    font-size: 1.5em;
-    opacity: 0.6;
-    color: lightblue;
-}
-
+/* Project cards with pictures */
 .icon {
     width: 45px;
     height: 45px;
@@ -364,13 +287,75 @@ body, html {
     color: #1572B6;
 }
 
-.coming{
-    opacity: 0.6;
+.icon-linux {
+    fill: black;
+}
+
+.header-section h1{
+    font-size: 3rem;
+    justify-self: center;
+}
+
+.header-section p{
+    opacity: 65%;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.project-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70vw;
+    height: 300px;
+    justify-self: center;
+}
+
+.card {
+    width: 100%;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+    padding: 20px;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr fit-content(1px) 1fr;
+}
+
+.card:nth-child(1) {
+    background: #0f2340;
+}
+
+.card:nth-child(2) {
+    background: #0F2340FF;
+}
+
+.card:nth-child(3) {
+    background: #0F2340FF;
 }
 
 .project-name{
-    font-size: 2rem;
+    font-size: 2.4rem;
     grid-column: span 2;
+}
+
+.example{
+    grid-column: span 2;
+    padding: 7px 0px;
+    font-size: 1.2em;
+    opacity: 0.5;
+    color: lightblue;
+}
+
+.tech-stack{
+    align-self: end;
+    display: flex;
+    gap: 8px;
 }
 
 .github-link {
@@ -380,23 +365,39 @@ body, html {
     margin-right: 15px;
 }
 
-
-.coming{
-    opacity: 0.5;
-}
-
-/* Project cards with pictures */
-.project-cards{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(160px, auto);
-    width: 70vw;
-    justify-self: center;
-}
-
 .project-card-right{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
+}
+
+.project-card-left{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.project-card-right > .project-img > .pic{
+    grid-column: 2;
+    border-radius: 0 24px 24px 0;
+}
+
+.project-card-right > .project-info > .card{
+    border-radius: 24px 0 0 24px;
+}
+
+.project-card-left > .project-img .pic{
+    grid-column: 1;
+    border-radius: 24px 0 0 24px;
+}
+
+.project-card-left > .project-info > .card{
+    border-radius: 0 24px 24px 0;
+    grid-column: 2;
+}
+
+.pic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #success-toast {
@@ -431,7 +432,7 @@ body, html {
 .socials-heading h1 { font-size: clamp(1.4rem, 2vw, 2.5rem); }
 .header-section p   { font-size: clamp(0.85rem, 1vw, 1.4rem); }
 .bento-icon      { font-size: clamp(1.8rem, 2.5vw, 3.5rem); }
-.project-name    { font-size: clamp(1.6rem, 2.5vw, 4rem); }
+.project-name    { font-size: clamp(2.5rem, 2.5vw, 4.4rem); }
 
 
 /* ── Large Desktop (≥ 1440px) ───────────────────────── */
@@ -440,6 +441,7 @@ body, html {
     .bento-container,
     .carousel {
         max-width: 1380px;
+        margin: 0 40px;
     }
 
     .card-social {
@@ -476,6 +478,7 @@ body, html {
     .bento-container {
         grid-auto-rows: minmax(200px, auto);
         gap: 28px;
+        margin: 0 40px;
     }
 
     .header {
@@ -516,6 +519,7 @@ body, html {
     .bento-container {
         grid-auto-rows: minmax(240px, auto);
         gap: 36px;
+        margin: 0 40px;
     }
 
     .header {
@@ -551,6 +555,7 @@ body, html {
     .bento-container {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 20px;
+        margin: 0 20px;
     }
 
     .tech-card    { grid-column: span 2; grid-row: auto; }
@@ -591,6 +596,7 @@ body, html {
     .bento-container {
         grid-template-columns: 1fr;
         padding: 0 16px;
+        margin: 0 20px;
     }
 
     .tech-card,
